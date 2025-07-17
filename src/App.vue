@@ -1,18 +1,22 @@
 <template>
-  <div class="flex h-screen bg-gray-900 text-white">
-    <Sidebar />
+  <div class="relative flex h-screen bg-gray-900 text-white">
     <div id="app" class="flex-1 flex flex-col h-screen justify-between overflow-hidden">
       <Topbar
         :title="topbar.title"
         :alert="topbar.alert"
         :time="topbar.time"
-        class="mx-4 mt-4"
+        class="m-4"
       />
-      <div class="text-center flex-1">
-        <p>{{ serverStatus }}</p>
-        <p>{{ streamStatus }}</p>
+      <div class="relative flex-1 mx-4 mb-4">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="text-center">
+            <p>{{ serverStatus }}</p>
+            <p>{{ streamStatus }}</p>
+          </div>
+        </div>
+        <Sidebar />
       </div>
-      <Bottombar class="mx-4 mb-4" />
+      <Bottombar class="m-4" />
     </div>
   </div>
 </template>

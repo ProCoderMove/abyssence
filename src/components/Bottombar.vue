@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="p-4 mx-4 mb-4 rounded-lg bg-gray-800/30 backdrop-blur-md flex justify-between items-center"
+    class="p-4 bg-gray-800/20 backdrop-blur-lg border border-white/10 shadow-lg rounded-lg flex justify-between items-center"
   >
     <div class="flex items-center space-x-4">
       <div class="relative">
@@ -8,8 +8,8 @@
           @click="toggleDropdown"
           class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700/50"
         >
-          <span>{{ selectedView }}</span>
-          <span>&#9662;</span>
+          <span class="font-light">{{ selectedView }}</span>
+          <span class="font-light">&#9662;</span>
         </button>
         <div
           v-if="isDropdownOpen"
@@ -20,7 +20,7 @@
               v-for="view in views"
               :key="view"
               @click="selectView(view)"
-              class="p-2 hover:bg-gray-700/50 cursor-pointer"
+              class="p-2 hover:bg-gray-700/50 cursor-pointer font-light"
             >
               {{ view }}
             </li>
@@ -29,23 +29,23 @@
       </div>
       <div class="flex items-center space-x-2">
         <span class="text-2xl">👷</span>
-        <span>--% Pilot Gain</span>
+        <span class="font-light">--% Pilot Gain</span>
       </div>
       <div class="flex items-center space-x-2">
         <span class="text-2xl">🔦</span>
-        <span>--% Lights (1)</span>
+        <span class="font-light">--% Lights (1)</span>
       </div>
       <div class="flex items-center space-x-2">
         <span class="text-2xl">📷</span>
-        <span>--% Cam Tilt</span>
+        <span class="font-light">--% Cam Tilt</span>
       </div>
       <div class="flex items-center space-x-2">
         <span class="text-2xl">🌊</span>
-        <span>0.00m Depth</span>
+        <span class="font-light">0.00m Depth</span>
       </div>
       <div class="flex items-center space-x-2">
         <span class="text-2xl">🌡️</span>
-        <span>--C Water Temp</span>
+        <span class="font-light">--C Water Temp</span>
       </div>
     </div>
   </footer>
