@@ -1,7 +1,7 @@
 <template>
-  <div class="p-4 rounded-lg bg-slate-600/30 backdrop-blur-md border border-slate-500/30">
+  <div class="h-full flex items-center justify-center">
     <div class="text-center">
-      <p>Server status: Reconnecting to signaling (11:14:18)</p>
+      <p>Server status: Signaller connection closed (14:44:41)</p>
       <p>Stream status: waiting...</p>
     </div>
   </div>
