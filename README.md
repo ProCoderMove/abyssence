@@ -1,4 +1,4 @@
-# Abyssence GUI 
+# Abyssence 
 
-Frontend for the Abyssence GUI, with love from Heuronics.
+Frontend for the Abyssence GCS, with love from Heuronics.
 for queries and suggestions please write to progamermove7@protonmail.com
