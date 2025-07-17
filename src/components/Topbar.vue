@@ -1,6 +1,6 @@
 <template>
   <header
-    class="p-4 bg-gray-800/30 backdrop-blur-md flex justify-between items-center"
+    class="p-4 mx-4 mt-4 rounded-lg bg-gray-800/30 backdrop-blur-md flex justify-between items-center"
   >
     <h1 class="text-xl">{{ title }}</h1>
     <div class="flex items-center space-x-4">

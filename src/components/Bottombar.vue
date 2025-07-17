@@ -1,17 +1,52 @@
 <template>
   <footer
-    class="p-4 bg-gray-800/30 backdrop-blur-md flex justify-between items-center"
+    class="p-4 mx-4 mb-4 rounded-lg bg-gray-800/30 backdrop-blur-md flex justify-between items-center"
   >
     <div class="flex items-center space-x-4">
-      <span>{{ view }}</span>
-      <span>Pilot Gain: {{ pilotGain }}%</span>
-      <span>Lights: {{ lights }}%</span>
-      <span>Cam Tilt: {{ camTilt }}%</span>
-      <span>Depth: {{ depth }}m</span>
-      <span>Water Temp: {{ waterTemp }}C</span>
-    </div>
-    <div class="flex items-center space-x-4">
-      <span>{{ stream }}</span>
+      <div class="relative">
+        <button
+          @click="toggleDropdown"
+          class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700/50"
+        >
+          <span>{{ selectedView }}</span>
+          <span>&#9662;</span>
+        </button>
+        <div
+          v-if="isDropdownOpen"
+          class="absolute bottom-full mb-2 w-48 bg-gray-800/80 rounded-md"
+        >
+          <ul>
+            <li
+              v-for="view in views"
+              :key="view"
+              @click="selectView(view)"
+              class="p-2 hover:bg-gray-700/50 cursor-pointer"
+            >
+              {{ view }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl">👷</span>
+        <span>--% Pilot Gain</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl">🔦</span>
+        <span>--% Lights (1)</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl">📷</span>
+        <span>--% Cam Tilt</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl">🌊</span>
+        <span>0.00m Depth</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl">🌡️</span>
+        <span>--C Water Temp</span>
+      </div>
     </div>
   </footer>
 </template>
@@ -19,14 +54,21 @@
 <script>
 export default {
   name: "Bottombar",
-  props: {
-    view: String,
-    pilotGain: Number,
-    lights: Number,
-    camTilt: Number,
-    depth: Number,
-    waterTemp: Number,
-    stream: String,
+  data() {
+    return {
+      isDropdownOpen: false,
+      selectedView: "Video View",
+      views: ["Video View", "Map View", "Data View"],
+    };
+  },
+  methods: {
+    toggleDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    },
+    selectView(view) {
+      this.selectedView = view;
+      this.isDropdownOpen = false;
+    },
   },
 };
 </script>

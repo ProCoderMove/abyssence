@@ -5,15 +5,7 @@
       <p>{{ serverStatus }}</p>
       <p>{{ streamStatus }}</p>
     </div>
-    <Bottombar
-      :view="bottombar.view"
-      :pilotGain="bottombar.pilotGain"
-      :lights="bottombar.lights"
-      :camTilt="bottombar.camTilt"
-      :depth="bottombar.depth"
-      :waterTemp="bottombar.waterTemp"
-      :stream="bottombar.stream"
-    />
+    <Bottombar />
   </div>
 </template>
 
@@ -33,15 +25,6 @@ export default {
         title: "Finding Tidal Tranquility",
         alert: "No recent alerts.",
         time: new Date().toLocaleTimeString(),
-      },
-      bottombar: {
-        view: "Video View",
-        pilotGain: 0,
-        lights: 0,
-        camTilt: 0,
-        depth: 0.0,
-        waterTemp: 0,
-        stream: "Stream 1",
       },
       serverStatus: "Server status: Signaller connection closed (14:44:41)",
       streamStatus: "Stream status: waiting...",
