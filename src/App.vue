@@ -1,15 +1,26 @@
 <template>
-  <div class="min-h-screen flex flex-col md:flex-row p-4 gap-4">
+  <div id="app" class="flex h-screen">
     <Sidebar />
-    <div class="flex-1 flex flex-col gap-4">
-      <TopBar />
-      <Dashboard />
+    <div class="flex-1 flex flex-col">
+      <Topbar />
+      <main class="flex-1 p-4">
+        <Dashboard />
+      </main>
     </div>
   </div>
 </template>
 
-<script setup>
+<script>
 import Sidebar from "./components/Sidebar.vue";
-import TopBar from "./components/TopBar.vue";
+import Topbar from "./components/Topbar.vue";
 import Dashboard from "./components/Dashboard.vue";
+
+export default {
+  name: "App",
+  components: {
+    Sidebar,
+    Topbar,
+    Dashboard,
+  },
+};
 </script>

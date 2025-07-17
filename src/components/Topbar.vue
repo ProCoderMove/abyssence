@@ -1,25 +1,18 @@
 <template>
-  <div
-    class="w-full backdrop-blur-xl bg-white/50 border border-white/30 shadow-lg rounded-xl p-4 flex justify-between items-center"
+  <header
+    class="p-4 m-4 ml-0 rounded-lg bg-slate-600/30 backdrop-blur-md border border-slate-500/30 flex justify-between items-center"
   >
-    <div class="text-sm text-gray-700">
-      <span class="font-medium">Status:</span>
-      <span class="text-green-600 font-semibold">Connected</span>
+    <h1 class="text-xl">Unraveling the Mariner's Mystery</h1>
+    <div class="flex items-center">
+      <span class="mr-4">Cockpit started</span>
+      <span class="mr-4">11:14:11</span>
+      <span>17th Jul</span>
     </div>
-    <div class="text-sm text-gray-700">
-      {{ currentTime }}
-    </div>
-  </div>
+  </header>
 </template>
 
-<script setup>
-import { ref, onMounted } from "vue";
-
-const currentTime = ref(new Date().toLocaleTimeString());
-
-onMounted(() => {
-  setInterval(() => {
-    currentTime.value = new Date().toLocaleTimeString();
-  }, 1000);
-});
+<script>
+export default {
+  name: "Topbar",
+};
 </script>
