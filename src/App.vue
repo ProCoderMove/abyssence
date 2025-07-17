@@ -1,21 +1,26 @@
 <template>
-  <div id="app" class="flex flex-col h-screen justify-between">
-    <Topbar :title="topbar.title" :alert="topbar.alert" :time="topbar.time" />
-    <div class="text-center">
-      <p>{{ serverStatus }}</p>
-      <p>{{ streamStatus }}</p>
+  <div class="flex h-screen">
+    <Sidebar />
+    <div id="app" class="flex-1 flex flex-col h-screen justify-between">
+      <Topbar :title="topbar.title" :alert="topbar.alert" :time="topbar.time" />
+      <div class="text-center">
+        <p>{{ serverStatus }}</p>
+        <p>{{ streamStatus }}</p>
+      </div>
+      <Bottombar />
     </div>
-    <Bottombar />
   </div>
 </template>
 
 <script>
+import Sidebar from "./components/Sidebar.vue";
 import Topbar from "./components/Topbar.vue";
 import Bottombar from "./components/Bottombar.vue";
 
 export default {
   name: "App",
   components: {
+    Sidebar,
     Topbar,
     Bottombar,
   },
