@@ -1,13 +1,18 @@
 <template>
-  <div class="flex h-screen">
+  <div class="flex h-screen bg-gray-900 text-white">
     <Sidebar />
-    <div id="app" class="flex-1 flex flex-col h-screen justify-between">
-      <Topbar :title="topbar.title" :alert="topbar.alert" :time="topbar.time" />
-      <div class="text-center">
+    <div id="app" class="flex-1 flex flex-col h-screen justify-between overflow-hidden">
+      <Topbar
+        :title="topbar.title"
+        :alert="topbar.alert"
+        :time="topbar.time"
+        class="mx-4 mt-4"
+      />
+      <div class="text-center flex-1">
         <p>{{ serverStatus }}</p>
         <p>{{ streamStatus }}</p>
       </div>
-      <Bottombar />
+      <Bottombar class="mx-4 mb-4" />
     </div>
   </div>
 </template>
@@ -27,11 +32,11 @@ export default {
   data() {
     return {
       topbar: {
-        title: "Finding Tidal Tranquility",
+        title: "Solving the Nautical Enigma",
         alert: "No recent alerts.",
         time: new Date().toLocaleTimeString(),
       },
-      serverStatus: "Server status: Signaller connection closed (14:44:41)",
+      serverStatus: "Server status: Reconnecting to signalling (15:58:22)",
       streamStatus: "Stream status: waiting...",
     };
   },
