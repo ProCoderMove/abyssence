@@ -4,19 +4,19 @@
     <button
       @click="toggle"
       :class="[
-        'fixed top-1/2 -translate-y-1/2 p-2 rounded-md hover:bg-gray-700/50 z-20 transition-all duration-300 ease-in-out',
+        'absolute top-1/2 -translate-y-1/2 p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/80 z-20 transition-all duration-300 ease-in-out',
         isExpanded ? 'left-64' : 'left-0',
       ]"
     >
-      <span v-if="isExpanded">&#9664;</span>
-      <span v-else>&#9654;</span>
+      <span v-if="isExpanded" class="text-white">&#9664;</span>
+      <span v-else class="text-white">&#9654;</span>
     </button>
 
     <!-- Sidebar Panel -->
     <div
       :class="[
-        'fixed top-0 left-0 h-full bg-gray-800/30 backdrop-blur-md transition-all duration-300 ease-in-out z-10',
-        isExpanded ? 'w-64 p-4' : 'w-0 p-0',
+        'absolute top-0 left-0 h-full bg-gray-800/20 backdrop-blur-lg border border-white/10 shadow-lg rounded-lg transition-all duration-300 ease-in-out z-10',
+        isExpanded ? 'w-64 p-4' : 'w-0 p-0 opacity-0',
       ]"
       class="overflow-hidden"
     >

@@ -1,11 +1,11 @@
 <template>
   <header
-    class="p-4 mx-4 mt-4 rounded-lg bg-gray-800/30 backdrop-blur-md flex justify-between items-center"
+    class="p-4 bg-gray-800/20 backdrop-blur-lg border border-white/10 shadow-lg rounded-lg flex justify-between items-center"
   >
-    <h1 class="text-xl">{{ title }}</h1>
+    <h1 class="text-xl font-light">{{ title }}</h1>
     <div class="flex items-center space-x-4">
-      <span>{{ alert }}</span>
-      <span>{{ time }}</span>
+      <span class="text-sm font-light">{{ alert }}</span>
+      <span class="text-sm font-light">{{ time }}</span>
     </div>
   </header>
 </template>
